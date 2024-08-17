@@ -12,7 +12,6 @@ vim.cmd [[call plug#end()]]
 vim.g.mapleader = " "
 vim.keymap.set('n','<leader>e','<cmd>NvimTreeToggle<CR>')
 
-
 local alpha = require'alpha'
 local dashboard = require'alpha.themes.dashboard'
 alpha.setup(dashboard.config)
@@ -39,7 +38,7 @@ require('lualine').setup {
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename'},
+    lualine_c = {'filename','os.date("%c")'},
     lualine_x = {'encoding', 'fileformat', 'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
