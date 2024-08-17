@@ -11,6 +11,23 @@ vim.cmd [[call plug#end()]]
 
 vim.g.mapleader = " "
 vim.keymap.set('n','<leader>e','<cmd>NvimTreeToggle<CR>')
+local uv = vim.uv
+
+local function setInterval(interval,callback)
+	local timer = uv.new_timer()
+	timer:start(interval,interval,function()
+		callback()
+	end)
+	return timer
+end
+
+setInterval(10000,function ()
+	local openPop = assert(io.popen('~/.wakatime/wakatime-cli --today','r'))
+	wakatime = openPop:read('*all')
+	wakatime = string.sub(wakatime, 0, string.len(wakatime) -1)
+	openPop:close()
+end)
+
 
 local alpha = require'alpha'
 local dashboard = require'alpha.themes.dashboard'
@@ -38,7 +55,7 @@ require('lualine').setup {
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename','os.date("%c")'},
+    lualine_c = {'filename','os.date("%c")','wakatime'},
     lualine_x = {'encoding', 'fileformat', 'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
@@ -57,3 +74,4 @@ require('lualine').setup {
   extensions = {}
 }
 nvimTree.setup()
+
