@@ -55,7 +55,7 @@ require('lualine').setup {
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename','os.date("%c")','wakatime'},
+    lualine_c = {'filename','os.date("%d/%m/%Y %H:%M:%S")','wakatime'},
     lualine_x = {'encoding', 'fileformat', 'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
