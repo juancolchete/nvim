@@ -7,10 +7,17 @@ vim.cmd [[Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}]]
 vim.cmd [[Plug 'nvim-tree/nvim-tree.lua']]
 vim.cmd [[Plug 'nvim-lualine/lualine.nvim']]
 vim.cmd [[Plug 'nvim-tree/nvim-web-devicons']]
+vim.cmd [[Plug 'akinsho/toggleterm.nvim']]
 vim.cmd [[call plug#end()]]
 
 vim.g.mapleader = " "
 vim.keymap.set('n','<leader>e','<cmd>NvimTreeToggle<CR>')
+vim.keymap.set('n','<F2>','<cmd>ToggleTerm direction=float<CR>')
+vim.keymap.set('t','<F2>','<cmd>ToggleTerm direction=float<CR>')
+vim.keymap.set('n','<F3>','<cmd>ToggleTerm direction=horizontal<CR>')
+vim.keymap.set('t','<F3>','<cmd>ToggleTerm direction=horizontal<CR>')
+vim.keymap.set('n','<F4>','<cmd>ToggleTerm direction=vertical<CR>')
+vim.keymap.set('t','<F4>','<cmd>ToggleTerm direction=vertical<CR>')
 local uv = vim.uv
 
 local function setInterval(interval,callback)
@@ -74,4 +81,4 @@ require('lualine').setup {
   extensions = {}
 }
 nvimTree.setup()
-
+require("toggleterm").setup()
