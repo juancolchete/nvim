@@ -12,6 +12,8 @@ vim.cmd [[call plug#end()]]
 
 vim.g.mapleader = " "
 vim.keymap.set('n','<leader>e','<cmd>NvimTreeToggle<CR>')
+vim.keymap.set('n','<leader>gg','<cmd>LazyGit<CR>')
+vim.keymap.set('n','<leader>w','<cmd>write<CR>')
 vim.keymap.set('n','<F2>','<cmd>ToggleTerm direction=float<CR>')
 vim.keymap.set('t','<F2>','<cmd>ToggleTerm direction=float<CR>')
 vim.keymap.set('n','<F3>','<cmd>ToggleTerm direction=horizontal<CR>')
