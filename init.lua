@@ -8,12 +8,16 @@ vim.cmd [[Plug 'nvim-tree/nvim-tree.lua']]
 vim.cmd [[Plug 'nvim-lualine/lualine.nvim']]
 vim.cmd [[Plug 'nvim-tree/nvim-web-devicons']]
 vim.cmd [[Plug 'akinsho/toggleterm.nvim']]
+vim.cmd [[Plug 'nvim-lua/plenary.nvim']]
+vim.cmd [[Plug 'nvim-telescope/telescope.nvim']]
 vim.cmd [[call plug#end()]]
 
 vim.g.mapleader = " "
 vim.keymap.set('n','<leader>e','<cmd>NvimTreeToggle<CR>')
 vim.keymap.set('n','<leader>gg','<cmd>LazyGit<CR>')
 vim.keymap.set('n','<leader>w','<cmd>write<CR>')
+vim.keymap.set('n','<leader>f','<cmd>Telescope find_files<cr>')
+vim.keymap.set('n','<S-f>','<cmd>Telescope live_grep<cr>')
 vim.keymap.set('n','<F2>','<cmd>ToggleTerm direction=float<CR>')
 vim.keymap.set('t','<F2>','<cmd>ToggleTerm direction=float<CR>')
 vim.keymap.set('n','<F3>','<cmd>ToggleTerm direction=horizontal<CR>')
@@ -84,3 +88,4 @@ require('lualine').setup {
 }
 nvimTree.setup()
 require("toggleterm").setup()
+require("telescope").setup()
