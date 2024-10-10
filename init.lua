@@ -24,6 +24,10 @@ vim.keymap.set('n','<F3>','<cmd>ToggleTerm direction=horizontal<CR>')
 vim.keymap.set('t','<F3>','<cmd>ToggleTerm direction=horizontal<CR>')
 vim.keymap.set('n','<F4>','<cmd>ToggleTerm direction=vertical<CR>')
 vim.keymap.set('t','<F4>','<cmd>ToggleTerm direction=vertical<CR>')
+vim.keymap.set('n','<A-j>',':m .+1<CR>==')
+vim.keymap.set('n','<A-k>',':m .-2<CR>==')
+vim.keymap.set('v','<A-j>',':m .+1<CR>==')
+vim.keymap.set('v','<A-k>',':m .-2<CR>==')
 local uv = vim.uv
 
 local function setInterval(interval,callback)
