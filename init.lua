@@ -10,6 +10,7 @@ vim.cmd [[Plug 'nvim-tree/nvim-web-devicons']]
 vim.cmd [[Plug 'akinsho/toggleterm.nvim']]
 vim.cmd [[Plug 'nvim-lua/plenary.nvim']]
 vim.cmd [[Plug 'nvim-telescope/telescope.nvim']]
+vim.cmd [[Plug 'mg979/vim-visual-multi']]
 vim.cmd [[call plug#end()]]
 
 vim.g.mapleader = " "
