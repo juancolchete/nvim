@@ -29,6 +29,8 @@ vim.keymap.set('n','<A-j>',':m .+1<CR>==')
 vim.keymap.set('n','<A-k>',':m .-2<CR>==')
 vim.keymap.set('v','<A-j>',":m '>+1<CR>gv=gv")
 vim.keymap.set('v','<A-k>',":m '<-2<CR>gv=gv")
+vim.api.nvim_set_keymap('n','<leader>/','gcc',{noremap = false, silent = false})
+vim.api.nvim_set_keymap('v','<leader>/','gcc',{noremap = false, silent = false})
 local uv = vim.uv
 
 local function setInterval(interval,callback)
